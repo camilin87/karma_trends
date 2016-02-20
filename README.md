@@ -12,12 +12,15 @@ Our hack summit hackathon project
     cd <repo_path>
     git pull && npm run deploy
 
-## Development
+### Startup Script
+    cd <repo_path>
+    npm run start
 
-### Dependencies
-    npm install http-server -g
-### Execution
-    http-server
+### Production Url
+    http://169.45.90.169/twitter-api.html
+
+## Development
+    npm run startdev
 
 ## Acknowledgements
  - Favicon artwork: https://openclipart.org/detail/228014/colorful-concentric-circles-vortex
