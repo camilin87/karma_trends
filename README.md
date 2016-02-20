@@ -10,8 +10,7 @@ Favicon taken from: https://openclipart.org/detail/228014/colorful-concentric-ci
 
 ### execution
     cd <repo_path>
-    git pull
-    npm run setup
+    git pull && npm run deploy
 
 ## dev
 
