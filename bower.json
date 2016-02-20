@@ -1,0 +1,22 @@
+{
+  "name": "karma_trends",
+  "description": "Our hack summit hackaton project",
+  "main": "",
+  "authors": [
+    "camilin87 <camilin87@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/camilin87/karma_trends",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^2.2.0"
+  }
+}
