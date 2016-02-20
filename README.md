@@ -1,3 +1,3 @@
 # karma_trends
-Out hack summit hackaton project
+Our hack summit hackaton project
 
