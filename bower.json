@@ -3,7 +3,8 @@
   "description": "Our hack summit hackaton project",
   "main": "",
   "authors": [
-    "camilin87 <camilin87@gmail.com>"
+    "camilin87 <camilin87@gmail.com>",
+    "carturoch <carturoch@gmail.com>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/camilin87/karma_trends",
