@@ -6,11 +6,13 @@
     "bower": "^1.7.7",
     "express": "^4.13.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "install": "^0.4.4",
+    "supervisor": "^0.9.1"
+  },
   "scripts": {
     "prestartdev": "npm install && bower install",
-    "startdev": "PORT=8080 node app.js",
-
+    "startdev": "PORT=8080 supervisor app.js",
     "setup": "npm install && bower install"
   },
   "repository": {
