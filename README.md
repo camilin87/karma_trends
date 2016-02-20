@@ -1,20 +1,23 @@
-# karma_trends
-Our hack summit hackaton project
-Favicon taken from: https://openclipart.org/detail/228014/colorful-concentric-circles-vortex
-## deployment
+# Karma Trends
+Our hack summit hackathon project
 
-### dependencies
+## Deployment
+
+### Dependencies
     sudo apt-get install -y node
     sudo apt-get install -y nodejs-legacy
     sudo apt-get install -y npm
 
-### execution
+### Execution
     cd <repo_path>
     git pull && npm run deploy
 
-## dev
+## Development
 
-### dependencies
+### Dependencies
     npm install http-server -g
-### execution
+### Execution
     http-server
+
+## Acknowledgements
+ - Favicon artwork: https://openclipart.org/detail/228014/colorful-concentric-circles-vortex
