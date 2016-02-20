@@ -1,6 +1,6 @@
 # karma_trends
 Our hack summit hackaton project
-
+Favicon taken from: https://openclipart.org/detail/228014/colorful-concentric-circles-vortex
 ## deployment
 
 ### dependencies
