@@ -4,14 +4,14 @@ Our hack summit hackaton project
 ## deployment
 
 ### dependencies
-    apt-get install -y node
-    apt-get install -y npm
+    sudo apt-get install -y node
+    sudo apt-get install -y nodejs-legacy
+    sudo apt-get install -y npm
 
 ### execution
     cd <repo_path>
     git pull
     npm run setup
-    cp -R -v * ~/Web/
 
 ## dev
 
