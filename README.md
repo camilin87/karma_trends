@@ -10,7 +10,8 @@ Our hack summit hackaton project
 ### execution
     cd <repo_path>
     git pull
-    npm run deploy
+    npm run setup
+    cp -R -v * ~/Web/
 
 ## dev
 
