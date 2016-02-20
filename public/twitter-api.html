@@ -4,6 +4,7 @@
 
     <div id="userInput" style="display: none">
         <input id="searchTerm" type="text" value="star wars"></input>
+        <input id="searchGeolocation" type="text" value="25.7603311,-80.1963382,10km"></input>
         <button id="searchButton" type="submit">Search</button>
     </div>
 
@@ -17,9 +18,14 @@
                 e.preventDefault();
                 $("#userInput").hide();
 
+                var apiQuery = {
+                    q: $("#searchTerm").val(),
+                    geocode: $("#searchGeolocation").val()
+                };
+
                 $.post(
                     "/api/search",
-                    {q: $("#searchTerm").val()}
+                    apiQuery
                 ).done(function(data){
                     console.log(data);
                     $("#userInput").show();

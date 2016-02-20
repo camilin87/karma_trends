@@ -21,13 +21,18 @@ app.use(bodyParser.urlencoded({
 
 var Twitter = require('twitter-node-client').Twitter;
 app.post('/api/search', function(req, res){
-    console.log("q: ", req.body.q);
+    console.log("q:", req.body.q, "geocode:", req.body.geocode);
 
     var config = require("./secrets/twitter.json");
     var twitter = new Twitter(config);
 
+    var apiQuery = {
+        'q':req.body.q,
+        'geocode': req.body.geocode,
+        'count': 10
+    };
     twitter.getSearch(
-        {'q':req.body.q,'count': 10},
+        apiQuery,
         function (err, response, body) {
             console.log('ERROR [%s]', err);
             res.status(500);
