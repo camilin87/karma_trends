@@ -7,7 +7,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "deploy": "npm install; bower install; cp -R -v ./ ~/Web/"
+    "deploy": "npm install && bower install && cp -R * ~/Web/"
   },
   "repository": {
     "type": "git",
