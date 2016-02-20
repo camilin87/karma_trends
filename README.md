@@ -10,9 +10,7 @@ Our hack summit hackaton project
 ### execution
     cd <repo_path>
     git pull
-    npm install
-    bower install
-    cp -R -v ./ ~/Web/
+    npm run deploy
 
 ## dev
 
