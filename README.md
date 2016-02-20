@@ -10,11 +10,8 @@ Our hack summit hackathon project
 
 ### Execution
     cd <repo_path>
-    git pull && npm run deploy
-
-### Startup Script
-    cd <repo_path>
-    npm run start
+    git pull && npm run setup
+    sudo PORT=8080 node app.js
 
 ### Production Url
     http://169.45.90.169/twitter-api.html

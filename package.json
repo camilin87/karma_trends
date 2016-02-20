@@ -11,8 +11,7 @@
     "prestartdev": "npm install && bower install",
     "startdev": "PORT=8080 node app.js",
 
-    "prestart": "npm install && bower install",
-    "start": "PORT=80 node app.js"
+    "setup": "npm install && bower install"
   },
   "repository": {
     "type": "git",
