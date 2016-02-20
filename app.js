@@ -19,10 +19,22 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+var Twitter = require('twitter-node-client').Twitter;
 app.post('/api/search', function(req, res){
     console.log("q: ", req.body.q);
-    result = {
-        q: req.body.q
-    };
-    res.send(result);
+
+    var config = require("./secrets/twitter.json");
+    var twitter = new Twitter(config);
+
+    twitter.getSearch(
+        {'q':req.body.q,'count': 10},
+        function (err, response, body) {
+            console.log('ERROR [%s]', err);
+            res.status(500);
+            res.send("api error");
+        },
+        function (data) {
+            res.send(data);
+        }
+    );
 });

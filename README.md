@@ -8,6 +8,18 @@ Our hack summit hackathon project
     sudo apt-get install -y nodejs-legacy
     sudo apt-get install -y npm
 
+### Secrets
+Make sure the file `secrets\twitter.json` exists. The file contents should be  
+```
+{
+    "consumerKey": "XXX",
+    "consumerSecret": "XXX",
+    "accessToken": "XXX",
+    "accessTokenSecret": "XXX",
+    "callBackUrl": "XXX"
+}
+```
+
 ### Execution
     cd <repo_path>
     git pull && npm run setup
