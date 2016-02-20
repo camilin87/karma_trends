@@ -4,15 +4,14 @@ Favicon taken from: https://openclipart.org/detail/228014/colorful-concentric-ci
 ## deployment
 
 ### dependencies
-    apt-get install -y node
-    apt-get install -y npm
+    sudo apt-get install -y node
+    sudo apt-get install -y nodejs-legacy
+    sudo apt-get install -y npm
 
 ### execution
     cd <repo_path>
     git pull
-    npm install
-    bower install
-    cp -R -v ./ ~/Web/
+    npm run setup
 
 ## dev
 
