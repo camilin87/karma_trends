@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "jQuery": "^2.2.0",
-    "highcharts": "^4.2.3"
+    "highcharts": "^4.2.3",
+    "datamaps": "^0.4.5"
   }
 }
