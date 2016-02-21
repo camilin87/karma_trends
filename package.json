@@ -11,12 +11,15 @@
   },
   "devDependencies": {
     "install": "^0.4.4",
+    "jasmine": "^2.4.1",
     "supervisor": "^0.9.1"
   },
   "scripts": {
     "prestartdev": "npm install && bower install",
     "startdev": "PORT=8080 supervisor app.js",
-    "setup": "npm install && bower install"
+    "setup": "npm install && bower install",
+
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
