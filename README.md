@@ -20,6 +20,14 @@ Make sure the file `secrets\twitter.json` exists. The file contents should be
 }
 ```
 
+Make sure the file `secrets\monkey_learn.json` exists. The file contents should be  
+
+```
+{
+    "apiKey": "XXX"
+}
+```
+
 ### Execution
     cd <repo_path>
     git pull && npm run setup
