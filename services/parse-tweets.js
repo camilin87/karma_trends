@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = parseTweets;
 
 function parseTweets(apiResponseStr){

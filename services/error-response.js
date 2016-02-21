@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = errorResponse;
 
 function errorResponse(httpResponse, err){

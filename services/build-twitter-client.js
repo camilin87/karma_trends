@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = buildTwitterClient;
 
 var Twitter = require('twitter-node-client').Twitter;

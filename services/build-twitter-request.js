@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = buildTwitterRequest;
 
 function buildTwitterRequest(httpRequest){

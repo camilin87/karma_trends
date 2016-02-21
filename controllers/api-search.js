@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = apiSearch;
 
 var errorResponse = require('../services/error-response.js');
