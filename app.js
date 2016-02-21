@@ -29,6 +29,7 @@ app.post('/api/search', function(req, res){
     var apiQuery = {
         'q':req.body.q,
         'geocode': req.body.geocode,
+        'lang': 'en',
         'count': 10
     };
     twitter.getSearch(
