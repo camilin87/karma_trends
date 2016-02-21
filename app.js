@@ -31,7 +31,7 @@ app.post('/api/search', function(req, res){
         'q':req.body.q,
         'geocode': req.body.geocode,
         'lang': 'en',
-        'count': 100
+        'count': 1000
     };
     twitter.getSearch(
         apiQuery,
@@ -41,9 +41,8 @@ app.post('/api/search', function(req, res){
             res.send("api error");
         },
         function (data) {
-            parseTweets(data, function(tweetsData){
-                res.send(tweetsData);
-            });
+            var tweetsData = parseTweets(data);
+            res.send(tweetsData);
         }
     );
 });

@@ -2,9 +2,14 @@
 
 module.exports = parseTweets
 
-function parseTweets(apiResponseStr, onComplete){
-    var parsed_data = JSON.parse(apiResponseStr);
-    // console.log(parsed_data.statuses[0]);
-    // return parsed_data.statuses[0].text;
-    onComplete(parsed_data.statuses[0].text);
+function parseTweets(apiResponseStr){
+    return JSON
+        .parse(apiResponseStr)
+        .statuses
+        .map(function(st){
+            return {
+                id: st.id_str,
+                text: st.text
+            };
+        });
 }
