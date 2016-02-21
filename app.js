@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 var Twitter = require('twitter-node-client').Twitter;
+var parseTweets = require('./parse-tweets.js');
 app.post('/api/search', function(req, res){
     console.log("q:", req.body.q, "geocode:", req.body.geocode);
 
@@ -30,7 +31,7 @@ app.post('/api/search', function(req, res){
         'q':req.body.q,
         'geocode': req.body.geocode,
         'lang': 'en',
-        'count': 10
+        'count': 100
     };
     twitter.getSearch(
         apiQuery,
@@ -40,7 +41,9 @@ app.post('/api/search', function(req, res){
             res.send("api error");
         },
         function (data) {
-            res.send(data);
+            parseTweets(data, function(tweetsData){
+                res.send(tweetsData);
+            });
         }
     );
 });
