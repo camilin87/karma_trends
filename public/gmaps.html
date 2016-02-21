@@ -60,11 +60,7 @@
       function initMap() {
         var customMapType = new google.maps.StyledMapType([
             {
-              stylers: [
-                {
-                    visibility: 'simplified'
-                }
-              ]
+              stylers: [{visibility: 'simplified'}]
             },
             {
               elementType: 'labels',
@@ -85,6 +81,10 @@
             {
               featureType: "transit",
               stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: "water",
+              stylers: [{visibility: 'simplified'}]
             }
           ],
           {
