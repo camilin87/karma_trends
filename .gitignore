@@ -1,4 +1,8 @@
 node_modules
 vendor
 .idea
+secrets
+bower_components
+
+
 sample

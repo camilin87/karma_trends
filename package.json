@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "description": "Our hack summit hackaton project",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "bower": "^1.7.7",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "monkeylearn": "^0.1.4",
+    "twitter-node-client": "0.0.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "install": "^0.4.4",
+    "jasmine": "^2.4.1",
+    "supervisor": "^0.9.1"
+  },
   "scripts": {
     "prestartdev": "npm install && bower install",
-    "startdev": "PORT=8080 node app.js",
+    "startdev": "PORT=8080 supervisor app.js",
+    "setup": "npm install && bower install",
 
-    "prestart": "npm install && bower install",
-    "start": "PORT=80 node app.js"
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",

@@ -1,12 +1,42 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Twitter Api Retrieval</title>
+</head>
 <body>
     <h1 id="project-title">Twitter Api Retrieval</h1>
 
-    <script src="/bower_components/jQuery/dist/jquery.min.js"></script>
+    <div id="userInput" style="display: none">
+        <input id="searchTerm" type="text" value="star wars"></input>
+        <input id="searchGeolocation" type="text" value="25.7603311,-80.1963382,10km"></input>
+        <button id="searchButton" type="submit">Search</button>
+    </div>
+
+    <script src="/vendor/jQuery/dist/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             var prevText = $("#project-title").text();
             $("#project-title").text(prevText + "....");
+
+            $("#searchButton").click(function(e){
+                e.preventDefault();
+                $("#userInput").hide();
+
+                var apiQuery = {
+                    q: $("#searchTerm").val(),
+                    geocode: $("#searchGeolocation").val()
+                };
+
+                $.post(
+                    "/api/search",
+                    apiQuery
+                ).done(function(data){
+                    console.log(data);
+                    $("#userInput").show();
+                });
+            });
+
+            $("#userInput").show();
         });
     </script>
 </body>

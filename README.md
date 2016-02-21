@@ -8,13 +8,30 @@ Our hack summit hackathon project
     sudo apt-get install -y nodejs-legacy
     sudo apt-get install -y npm
 
+### Secrets
+Make sure the file `secrets\twitter.json` exists. The file contents should be  
+```
+{
+    "consumerKey": "XXX",
+    "consumerSecret": "XXX",
+    "accessToken": "XXX",
+    "accessTokenSecret": "XXX",
+    "callBackUrl": "XXX"
+}
+```
+
+Make sure the file `secrets\monkey_learn.json` exists. The file contents should be  
+
+```
+{
+    "apiKey": "XXX"
+}
+```
+
 ### Execution
     cd <repo_path>
-    git pull && npm run deploy
-
-### Startup Script
-    cd <repo_path>
-    npm run start
+    git pull && npm run setup
+    sudo PORT=80 node --harmony app.js
 
 ### Production Url
     http://169.45.90.169/twitter-api.html
