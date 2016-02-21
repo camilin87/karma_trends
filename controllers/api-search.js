@@ -3,13 +3,11 @@
 module.exports = apiSearch;
 
 var Twitter = require('twitter-node-client').Twitter;
+var twitterConfig = require("../secrets/twitter.json");
 var parseTweets = require('../services/parse-tweets.js');
 
 function apiSearch(req, res){
     console.log("q:", req.body.q, "geocode:", req.body.geocode);
-
-    var config = require("../secrets/twitter.json");
-    var twitter = new Twitter(config);
 
     var apiQuery = {
         'q':req.body.q,
@@ -17,7 +15,8 @@ function apiSearch(req, res){
         'lang': 'en',
         'count': 1000
     };
-    twitter.getSearch(
+
+    new Twitter(twitterConfig).getSearch(
         apiQuery,
         function (err, response, body) {
             console.log('ERROR [%s]', err);
