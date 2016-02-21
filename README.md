@@ -31,7 +31,7 @@ Make sure the file `secrets\monkey_learn.json` exists. The file contents should 
 ### Execution
     cd <repo_path>
     git pull && npm run setup
-    sudo PORT=80 node app.js
+    sudo PORT=80 node --harmony app.js
 
 ### Production Url
     http://169.45.90.169/twitter-api.html
