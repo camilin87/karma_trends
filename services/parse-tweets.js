@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = parseTweets
+module.exports = parseTweets;
 
 function parseTweets(apiResponseStr){
     return JSON
