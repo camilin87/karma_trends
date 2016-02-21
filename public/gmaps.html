@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <a href="https://developers.google.com/maps/documentation/javascript/examples/circle-simple">docs</a>
+    <!-- <a href="https://developers.google.com/maps/documentation/javascript/examples/circle-simple">docs</a> -->
 
     <div id="map"></div>
     <script>
@@ -72,6 +72,10 @@
             },
             {
               featureType: "road",
+              stylers: [{visibility: 'off'}]
+            },
+            {
+              featureType: "landscape.natural",
               stylers: [{visibility: 'off'}]
             }
           ],
