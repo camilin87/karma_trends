@@ -1,6 +1,13 @@
 var _sys = {
     currentMap: "countries/us/us-all-all-highres",
-    data: _data // Replace this for dynamic data
+    data: _data, // Replace this for dynamic data
+    colorScales: [
+        '#f1eef6',
+        '#bdc9e1',
+        '#74a9cf',
+        '#2b8cbe',
+        '#045a8d'
+    ]
 };
 
 
@@ -55,6 +62,29 @@ options = {
             showInLegend: false,
             enableMouseTracking: false
         }
+    },
+    
+    colorAxis: {
+        dataClasses: [{
+            from: 0,
+            to: 3,
+            color: _sys.colorScales[0]
+        }, {
+            from: 3,
+            to: 6,
+            color: _sys.colorScales[1]
+        }, {
+            from: 6,
+            to: 9,
+            color: _sys.colorScales[2]
+        }, {
+            from: 9,
+            to: 12,
+            color: _sys.colorScales[3]
+        }, {
+            from: 12,
+            color: _sys.colorScales[4]
+        }]
     },
 
     series: [{
