@@ -6,6 +6,7 @@ var parseTweets = require('../services/parse-tweets.js');
 var buildTwitterClient = require('../services/build-twitter-client.js');
 var buildTwitterRequest = require('../services/build-twitter-request.js');
 var searchMonkeyLearn = require('../services/search-monkey-learn.js');
+var apiResponseCorrelator = require("../services/api-response-correlator.js");
 
 function apiSearch(req, res){
     buildTwitterClient().getSearch(
@@ -22,11 +23,10 @@ function apiSearch(req, res){
                 return t.text;
             });
 
-            searchMonkeyLearn(textsLists, function(classificationResult){
-                res.send(classificationResult);
+            searchMonkeyLearn(textsLists, function(classificationsData){
+                var apiResult = apiResponseCorrelator(tweetsData, classificationsData);
+                res.send(apiResult);
             });
-
-            // res.send(tweetsData);
         }
     );
 };
