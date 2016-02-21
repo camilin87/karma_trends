@@ -2,14 +2,13 @@
 
 module.exports = apiSearch;
 
-var Twitter = require('twitter-node-client').Twitter;
-var twitterConfig = require("../secrets/twitter.json");
 var parseTweets = require('../services/parse-tweets.js');
-var buildHttpRequest = require('../services/build-twitter-request.js');
+var buildTwitterClient = require('../services/build-twitter-client.js');
+var buildTwitterRequest = require('../services/build-twitter-request.js');
 
 function apiSearch(req, res){
-    new Twitter(twitterConfig).getSearch(
-        buildHttpRequest(req),
+    buildTwitterClient().getSearch(
+        buildTwitterRequest(req),
         function (err, response, body) {
             console.log('ERROR [%s]', err);
             res.status(500);
