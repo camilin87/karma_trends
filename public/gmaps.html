@@ -58,17 +58,39 @@
       ];
 
       function initMap() {
-        // Create the map.
+        var customMapType = new google.maps.StyledMapType([
+            {
+              stylers: [
+                {
+                    visibility: 'simplified'
+                }
+              ]
+            },
+            {
+              elementType: 'labels',
+              stylers: [{visibility: 'off'}]
+            }
+          ],
+          {
+            name: 'Custom Style'
+          }
+        );
+        var customMapTypeId = 'custom_style';
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: {lat: 37.090, lng: -95.712},
-          mapTypeId: google.maps.MapTypeId.TERRAIN
+          // mapTypeId: google.maps.MapTypeId.TERRAIN,
+          mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+          }
         });
 
-        // Construct the circle for each value in citymap.
-        // Note: We scale the area of the circle based on the population.
+        map.mapTypes.set(customMapTypeId, customMapType);
+        map.setMapTypeId(customMapTypeId);
+
+
         for (var city in citymap) {
-          // Add the circle for this city to the map.
           var cityCircle = new google.maps.Circle({
             strokeColor: citymap[city].strokeColor,
             strokeOpacity: 0.8,
