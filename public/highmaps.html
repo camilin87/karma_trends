@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highmaps demo</title>
+</head>
+<body>
+    Highmaps
+    <div id="container"></div>
+
+    <script src="/vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.6/proj4.js"></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+             var H = Highcharts,
+                map = H.maps['countries/us/us-all'],
+                chart;
+
+            var jsonFavor = [
+              {"lat":32.380120, "lon":-86.300629, "z":205764},
+              {"lat":58.299740, "lon":-134.406794, "z":31275},
+              {"lat":33.448260, "lon":-112.075774, "z":1445632},
+              {"lat":34.748655, "lon":-92.274494, "z":193524},
+              {"lat":38.579065, "lon":-121.491014, "z":466488}
+            ];
+            var jsonAgainst = [
+              {"lat":32.380120, "lon":-86.300629, "z":5764},
+              {"lat":58.299740, "lon":-134.406794, "z":1275},
+              {"lat":33.448260, "lon":-112.075774, "z":14456320},
+              {"lat":34.748655, "lon":-92.274494, "z":19352},
+              {"lat":38.579065, "lon":-121.491014, "z":4664880}
+            ];
+
+
+            $('#container').highcharts('Map', {
+
+                title: {
+                    text: 'Highmaps lat/lon demo'
+                },
+
+                series: [{
+                    name: 'Basemap',
+                    mapData: map,
+                    borderColor: '#606060',
+                    nullColor: 'rgba(200, 200, 200, 0.2)',
+                    showInLegend: false
+                }, {
+                    name: 'Separators',
+                    type: 'mapline',
+                    data: H.geojson(map, 'mapline'),
+                    color: '#101010',
+                    enableMouseTracking: false,
+                    showInLegend: false
+                }, {
+                    type: 'mapbubble',
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.capital}'
+                    },
+                    name: 'In Favor',
+                    data: jsonFavor,
+                    maxSize: '12%',
+                    color: '#FF0000'
+                }, {
+                    type: 'mapbubble',
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.capital}'
+                    },
+                    name: 'Against',
+                    data: jsonAgainst,
+                    maxSize: '12%',
+                    color: '#0000FF'
+                }]
+            });
+
+            chart = $('#container').highcharts();
+
+
+            $('#container').mouseout(function () {
+                if (chart && chart.lab) {
+                    chart.lab.destroy();
+                    chart.lab = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
