@@ -63,7 +63,7 @@ options = {
             enableMouseTracking: false
         }
     },
-    
+
     colorAxis: {
         dataClasses: [{
             from: 0,
